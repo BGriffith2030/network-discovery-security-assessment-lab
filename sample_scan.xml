@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample Nmap XML for the virtual lab network 192.168.56.0/24. -->
+<!-- Hosts and services are the lab's own virtual machines. -->
+<nmaprun scanner="nmap" args="nmap -sV -O -oX sample_scan.xml 192.168.56.0/24" start="1760318400" startstr="Mon Oct 12 10:00:00 2026" version="7.94" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1000" services="1-1000"/>
+<host starttime="1760318401" endtime="1760318460">
+<status state="up" reason="arp-response" reason_ttl="64"/>
+<address addr="192.168.56.10" addrtype="ipv4"/>
+<address addr="00:0C:29:AA:10:10" vendor="VMware" addrtype="mac"/>
+<hostnames><hostname name="DC-01" type="user"/></hostnames>
+<ports>
+<port protocol="tcp" portid="53"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="domain" product="Microsoft DNS" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="88"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="kerberos-sec" product="Microsoft Windows Kerberos" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="msrpc" product="Microsoft Windows RPC" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="389"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="ldap" product="Microsoft Windows Active Directory LDAP" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="microsoft-ds" product="Microsoft Windows Server" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="3389"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="ms-wbt-server" product="Microsoft Terminal Services" method="probed" conf="10"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="445"/><osmatch name="Microsoft Windows Server 2022" accuracy="96" line="80411"/></os>
+</host>
+<host starttime="1760318401" endtime="1760318462">
+<status state="up" reason="arp-response" reason_ttl="64"/>
+<address addr="192.168.56.103" addrtype="ipv4"/>
+<address addr="00:0C:29:AA:10:33" vendor="VMware" addrtype="mac"/>
+<hostnames><hostname name="WS-FINANCE-03" type="user"/></hostnames>
+<ports>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="msrpc" product="Microsoft Windows RPC" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="microsoft-ds" product="Microsoft Windows Server" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="3389"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="ms-wbt-server" product="Microsoft Terminal Services" method="probed" conf="10"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="445"/><osmatch name="Microsoft Windows 11" accuracy="94" line="70220"/></os>
+</host>
+<host starttime="1760318401" endtime="1760318458">
+<status state="up" reason="arp-response" reason_ttl="64"/>
+<address addr="192.168.56.50" addrtype="ipv4"/>
+<address addr="00:0C:29:AA:10:50" vendor="VMware" addrtype="mac"/>
+<hostnames><hostname name="lab-linux-01" type="user"/></hostnames>
+<ports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="8.9p1 Ubuntu" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.4.52" extrainfo="(Ubuntu)" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="23"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="telnet" product="Linux telnetd" method="probed" conf="10"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/><osmatch name="Linux 5.15" accuracy="97" line="69001"/></os>
+</host>
+<host starttime="1760318401" endtime="1760318455">
+<status state="up" reason="arp-response" reason_ttl="64"/>
+<address addr="192.168.56.60" addrtype="ipv4"/>
+<address addr="00:0C:29:AA:10:60" vendor="VMware" addrtype="mac"/>
+<hostnames><hostname name="lab-printer" type="user"/></hostnames>
+<ports>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Embedded web server" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="https" product="Embedded web server" method="probed" conf="10"/></port>
+<port protocol="tcp" portid="9100"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="jetdirect" product="HP JetDirect" method="probed" conf="10"/></port>
+</ports>
+<os><osmatch name="Embedded Linux" accuracy="88" line="70000"/></os>
+</host>
+<runstats><finished time="1760318520" timestr="Mon Oct 12 10:12:00 2026" elapsed="120.05" summary="Nmap done; 256 IP addresses (4 hosts up) scanned in 120.05 seconds" exit="success"/><hosts up="4" down="252" total="256"/></runstats>
+</nmaprun>
