@@ -26,7 +26,7 @@ The `-oX` flag is the step most beginners skip. The XML output is what makes the
 ## What is in this repository
 
 | File | Purpose |
-| --- | --- | --- |
+| --- | --- |
 | `parse_nmap_report.py` | Parses Nmap XML output and produces a Markdown assessment report with automatic risk flags. |
 | `sample_scan.xml` | Sample Nmap output for the virtual lab network: a domain controller, a workstation, a Linux server, and a printer. |
 | `assessment-report.md` | The written assessment of the sample scan: findings, severity reasoning, and recommendations. |
